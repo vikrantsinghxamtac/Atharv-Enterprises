@@ -58,28 +58,6 @@
   window.addEventListener('scroll', animateStats);
   window.addEventListener('load', animateStats);
 
-  // Contact form (no backend – show message)
-  var form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
-      var originalText = btn.textContent;
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      setTimeout(function () {
-        btn.textContent = 'Message sent!';
-        btn.style.background = 'var(--success)';
-        form.reset();
-        setTimeout(function () {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 2500);
-      }, 600);
-    });
-  }
-
   // Footer year
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
